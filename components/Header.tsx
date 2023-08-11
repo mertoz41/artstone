@@ -1,23 +1,72 @@
 import {
   Box,
-  Text,
   Image,
   Heading,
   Flex,
-  Divider,
-  Center,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverArrow,
 } from "@chakra-ui/react";
+import Link from "next/link";
+
 function Header() {
   const renderNavigationButton = (title: string) => (
-    <Heading
-      fontSize={25}
-      fontWeight={400}
-      textDecoration={"underline"}
-      _hover={{ textDecorationColor: "red" }}
-      cursor={"pointer"}
-    >
-      {title}
-    </Heading>
+    <Popover trigger="hover">
+      <PopoverTrigger>
+        <Heading
+          fontSize={25}
+          fontWeight={400}
+          textDecoration={"underline"}
+          _hover={{ textDecorationColor: "red" }}
+          cursor={"pointer"}
+        >
+          {title}
+        </Heading>
+      </PopoverTrigger>
+      <PopoverContent>
+        <PopoverArrow />
+        {/* <PopoverHeader>Granite marble quartz!</PopoverHeader> */}
+        <PopoverBody w={"auto"}>
+          <Link href="/stones">
+            <Heading
+              textAlign={"center"}
+              fontSize={25}
+              fontWeight={400}
+              _hover={{
+                textDecoration: "underline",
+                textDecorationColor: "red",
+              }}
+              cursor={"pointer"}
+            >
+              granite
+            </Heading>
+          </Link>
+          <Heading
+            textAlign={"center"}
+            fontSize={25}
+            fontWeight={400}
+            textDecoration={"underline"}
+            _hover={{ textDecoration: "underline", textDecorationColor: "red" }}
+            cursor={"pointer"}
+          >
+            marble
+          </Heading>
+          <Heading
+            textAlign={"center"}
+            fontSize={25}
+            fontWeight={400}
+            textDecoration={"underline"}
+            _hover={{ textDecoration: "underline", textDecorationColor: "red" }}
+            cursor={"pointer"}
+          >
+            quartz
+          </Heading>
+        </PopoverBody>
+      </PopoverContent>
+    </Popover>
   );
   const renderSeparation = () => (
     <Heading fontSize={25} fontWeight={200} alignSelf={"center"}>
