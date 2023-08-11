@@ -1,10 +1,13 @@
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Text, Image } from "@chakra-ui/react";
+import Header from "@/components/Header";
 function Home() {
   return (
-    <main>
-      <Text backgroundColor={"red"}>gangang</Text>
-      <Box></Box>
-    </main>
+    <Box h="100vh" w={"100vw"}>
+      <Header />
+      {/* <Text backgroundColor={"red"}>gangang</Text>
+      <Image src="artstonelogo.jpg"  boxSize={130}/>
+      <Box></Box> */}
+    </Box>
   );
 }
 
