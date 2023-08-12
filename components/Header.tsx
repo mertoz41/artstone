@@ -13,27 +13,32 @@ import {
 import Link from "next/link";
 
 function Header() {
-  const renderNavigationButton = (title: string) => (
+  const renderStonesButton = (title: string) => (
     <Popover trigger="hover">
       <PopoverTrigger>
         <Heading
-          fontSize={25}
+          fontSize={21}
           fontWeight={400}
-          textDecoration={"underline"}
-          _hover={{ textDecorationColor: "red" }}
+          _hover={{ textDecoration: "underline", textDecorationColor: "black" }}
           cursor={"pointer"}
         >
           {title}
         </Heading>
       </PopoverTrigger>
-      <PopoverContent>
+      <PopoverContent
+        backgroundColor={"white"}
+        borderWidth={1}
+        borderColor="#e5e5e5"
+        padding={15}
+        borderRadius={20}
+        boxShadow={"dark-lg"}
+      >
         <PopoverArrow />
-        {/* <PopoverHeader>Granite marble quartz!</PopoverHeader> */}
         <PopoverBody w={"auto"}>
           <Link href="/stones">
             <Heading
               textAlign={"center"}
-              fontSize={25}
+              fontSize={19}
               fontWeight={400}
               _hover={{
                 textDecoration: "underline",
@@ -46,7 +51,7 @@ function Header() {
           </Link>
           <Heading
             textAlign={"center"}
-            fontSize={25}
+            fontSize={19}
             fontWeight={400}
             textDecoration={"underline"}
             _hover={{ textDecoration: "underline", textDecorationColor: "red" }}
@@ -56,7 +61,7 @@ function Header() {
           </Heading>
           <Heading
             textAlign={"center"}
-            fontSize={25}
+            fontSize={19}
             fontWeight={400}
             textDecoration={"underline"}
             _hover={{ textDecoration: "underline", textDecorationColor: "red" }}
@@ -73,16 +78,30 @@ function Header() {
       |
     </Heading>
   );
+  const renderNavigationButton = (title: string) => {
+    return (
+      <Heading
+        fontSize={21}
+        fontWeight={400}
+        _hover={{ textDecoration: "underline", textDecorationColor: "black" }}
+        cursor={"pointer"}
+      >
+        {title}
+      </Heading>
+    );
+  };
   return (
     <Box justifyContent={"center"}>
       <Image m="0 auto" src="artstonelogo.jpg" boxSize={130} />
-      <Heading textAlign={"center"}>Artstone Marble & Granite</Heading>
+      <Heading textAlign={"center"} fontSize={36} fontWeight={"400"}>
+        Artstone Marble & Granite
+      </Heading>
       <Flex m="0 auto" justifyContent={"space-between"} w={"30%"}>
-        {renderNavigationButton("stones")}
-        {renderSeparation()}
+        {renderStonesButton("stones")}
         {renderNavigationButton("sinks")}
-        {renderSeparation()}
         {renderNavigationButton("edges")}
+        {renderNavigationButton("about")}
+        {renderNavigationButton("contact us")}
       </Flex>
     </Box>
   );

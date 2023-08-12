@@ -83,10 +83,13 @@ function Footer() {
     </Flex>
   );
   return (
-    <Flex w={"70%"} m="0 auto" justifyContent={"space-between"}>
+    <Flex  h="auto" m="0 auto" justifyContent={"center"} backgroundColor={"#f2f2f2"}  boxShadow={"dark-lg"} >
+      <Flex w={"70%"} justifyContent={"space-between"}>
+
       {renderCompanyStatement()}
       {renderLinks()}
       {renderAddress()}
+      </Flex>
     </Flex>
   );
 }

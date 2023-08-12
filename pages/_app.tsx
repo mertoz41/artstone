@@ -12,8 +12,6 @@ type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
 };
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
-  const getLayout = Component.getLayout ?? ((page) => page);
-
   return (
     <Layout>
       <ChakraProvider>

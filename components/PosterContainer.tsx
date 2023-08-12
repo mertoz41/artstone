@@ -22,7 +22,7 @@ function PosterContainer() {
     );
   };
   return (
-    <Box padding={10}>
+    <Box padding={10} h={"auto"}>
       {renderPosterSection(false, "artstone-fifth.jpg")}
       {renderPosterSection(true, "sink-stone.jpg")}
     </Box>
