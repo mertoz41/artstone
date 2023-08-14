@@ -16,14 +16,19 @@ function Header() {
   const renderStonesButton = (title: string) => (
     <Popover trigger="hover">
       <PopoverTrigger>
-        <Heading
-          fontSize={21}
-          fontWeight={400}
-          _hover={{ textDecoration: "underline", textDecorationColor: "black" }}
-          cursor={"pointer"}
-        >
-          {title}
-        </Heading>
+        <Link href="/stones">
+          <Heading
+            fontSize={21}
+            fontWeight={400}
+            _hover={{
+              textDecoration: "underline",
+              textDecorationColor: "black",
+            }}
+            cursor={"pointer"}
+          >
+            {title}
+          </Heading>
+        </Link>
       </PopoverTrigger>
       <PopoverContent
         backgroundColor={"white"}
@@ -35,20 +40,18 @@ function Header() {
       >
         <PopoverArrow />
         <PopoverBody w={"auto"}>
-          <Link href="/stones">
-            <Heading
-              textAlign={"center"}
-              fontSize={19}
-              fontWeight={400}
-              _hover={{
-                textDecoration: "underline",
-                textDecorationColor: "red",
-              }}
-              cursor={"pointer"}
-            >
-              granite
-            </Heading>
-          </Link>
+          <Heading
+            textAlign={"center"}
+            fontSize={19}
+            fontWeight={400}
+            _hover={{
+              textDecoration: "underline",
+              textDecorationColor: "red",
+            }}
+            cursor={"pointer"}
+          >
+            granite
+          </Heading>
           <Heading
             textAlign={"center"}
             fontSize={19}
@@ -91,8 +94,10 @@ function Header() {
     );
   };
   return (
-    <Box justifyContent={"center"}>
-      <Image m="0 auto" src="artstonelogo.jpg" boxSize={130} />
+    <Flex flexDirection={"column"} alignItems={"center"}>
+      <Link href="/">
+        <Image justifyContent={"center"} src="/artstonelogo.jpg" boxSize={130} />
+      </Link>
       <Heading textAlign={"center"} fontSize={36} fontWeight={"400"}>
         Artstone Marble & Granite
       </Heading>
@@ -101,9 +106,11 @@ function Header() {
         {renderNavigationButton("sinks")}
         {renderNavigationButton("edges")}
         {renderNavigationButton("about")}
+        {renderNavigationButton("blog")}
+
         {renderNavigationButton("contact us")}
       </Flex>
-    </Box>
+    </Flex>
   );
 }
 

@@ -3,7 +3,7 @@ import { Box, Flex, Image, Text, Heading } from "@chakra-ui/react";
 function Footer() {
   const renderCompanyStatement = () => (
     <Box flex={1} padding={5}>
-      <Image h={65} src={"artstonelogo.jpg"} m="0 auto" mb={5} />
+      <Image h={65} src={"/artstonelogo.jpg"} m="0 auto" mb={5} />
       <Text fontWeight={400} fontSize={18}>
         At Artstone Marble & Granite we strive to provide our customers with
         countertops and surfaces so stunning, they serve as unique works of art
@@ -83,12 +83,17 @@ function Footer() {
     </Flex>
   );
   return (
-    <Flex  h="auto" m="0 auto" justifyContent={"center"} backgroundColor={"#f2f2f2"}  boxShadow={"dark-lg"} >
+    <Flex
+      h="auto"
+      m="0 auto"
+      justifyContent={"center"}
+      backgroundColor={"#f2f2f2"}
+      boxShadow={"dark-lg"}
+    >
       <Flex w={"70%"} justifyContent={"space-between"}>
-
-      {renderCompanyStatement()}
-      {renderLinks()}
-      {renderAddress()}
+        {renderCompanyStatement()}
+        {renderLinks()}
+        {renderAddress()}
       </Flex>
     </Flex>
   );
