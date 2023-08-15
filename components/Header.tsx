@@ -40,38 +40,50 @@ function Header() {
       >
         <PopoverArrow />
         <PopoverBody w={"auto"}>
-          <Heading
-            textAlign={"center"}
-            fontSize={19}
-            fontWeight={400}
-            _hover={{
-              textDecoration: "underline",
-              textDecorationColor: "red",
-            }}
-            cursor={"pointer"}
-          >
-            granite
-          </Heading>
-          <Heading
-            textAlign={"center"}
-            fontSize={19}
-            fontWeight={400}
-            textDecoration={"underline"}
-            _hover={{ textDecoration: "underline", textDecorationColor: "red" }}
-            cursor={"pointer"}
-          >
-            marble
-          </Heading>
-          <Heading
-            textAlign={"center"}
-            fontSize={19}
-            fontWeight={400}
-            textDecoration={"underline"}
-            _hover={{ textDecoration: "underline", textDecorationColor: "red" }}
-            cursor={"pointer"}
-          >
-            quartz
-          </Heading>
+          <Link href="/stones/granite">
+            <Heading
+              textAlign={"center"}
+              fontSize={19}
+              fontWeight={400}
+              _hover={{
+                textDecoration: "underline",
+                textDecorationColor: "red",
+              }}
+              cursor={"pointer"}
+            >
+              granite
+            </Heading>
+          </Link>
+          <Link href="/stones/marble">
+            <Heading
+              textAlign={"center"}
+              fontSize={19}
+              fontWeight={400}
+              textDecoration={"underline"}
+              _hover={{
+                textDecoration: "underline",
+                textDecorationColor: "red",
+              }}
+              cursor={"pointer"}
+            >
+              marble
+            </Heading>
+          </Link>
+          <Link href="/stones/quartz">
+            <Heading
+              textAlign={"center"}
+              fontSize={19}
+              fontWeight={400}
+              textDecoration={"underline"}
+              _hover={{
+                textDecoration: "underline",
+                textDecorationColor: "red",
+              }}
+              cursor={"pointer"}
+            >
+              quartz
+            </Heading>
+          </Link>
         </PopoverBody>
       </PopoverContent>
     </Popover>
@@ -96,7 +108,11 @@ function Header() {
   return (
     <Flex flexDirection={"column"} alignItems={"center"}>
       <Link href="/">
-        <Image justifyContent={"center"} src="/artstonelogo.jpg" boxSize={130} />
+        <Image
+          justifyContent={"center"}
+          src="/artstonelogo.jpg"
+          boxSize={130}
+        />
       </Link>
       <Heading textAlign={"center"} fontSize={36} fontWeight={"400"}>
         Artstone Marble & Granite

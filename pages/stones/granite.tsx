@@ -1,4 +1,5 @@
-import { Image, Heading, Flex, Text, Button, Link } from "@chakra-ui/react";
+import { Heading, Flex } from "@chakra-ui/react";
+import StoneItem from "@/components/StoneItem";
 function Granite() {
   const granites: Array<string> = [
     "african-persa",
@@ -97,28 +98,22 @@ function Granite() {
     "white-thunder",
     "white-tulum",
   ];
-  const renderGranite = (name: string) => (
-    <Flex flex={1} w={320} direction={"column"} cursor="pointer">
-      <Image
-        src={`/granitepics/${name}.png`}
-        boxSize={250}
-        alignSelf={"center"}
-        boxShadow={"2xl"}
-        mb={5}
-      />
-      <Heading fontSize={23} fontWeight={500} textAlign={"center"} mb={5}>
-        {name}
-      </Heading>
-    </Flex>
-  );
+
   return (
-    <Flex h="100vh" w={"100vw"} direction={"column"} backgroundColor={"red"}>
+    <Flex w={"100vw"} direction={"column"}>
       <Heading paddingY={30} fontWeight={25} textAlign={"center"}>
         Granite
       </Heading>
 
-      <Flex w="90%" justifyContent={"space-between"} alignSelf={"center"}>
-        {granites.map((stone: any) => renderGranite(stone))}
+      <Flex
+        w="90%"
+        justifyContent={"space-between"}
+        alignSelf={"center"}
+        flexWrap={"wrap"}
+      >
+        {granites.map((stone: any) => (
+          <StoneItem type="granite" name={stone} />
+        ))}
       </Flex>
     </Flex>
   );
