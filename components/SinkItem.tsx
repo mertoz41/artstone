@@ -1,11 +1,12 @@
 import { Image, Heading, Flex, Text, Button, Link } from "@chakra-ui/react";
 
-function StoneItem({ type, name }: { type: string | any; name: string }) {
+function SinkItem({ type, name }: { type: string | any; name: string }) {
+    console.log(type)
   return (
     <Flex margin={5} direction={"column"} padding={5}>
       <Image
         objectFit={"cover"}
-        src={`https://asmgstones.s3.amazonaws.com/${type}pics/${name}.png`}
+        src={`https://asmgsinks.s3.amazonaws.com/${type}pics/${name}.jpg`}
         _hover={{ boxShadow: "xl" }}
         h={240}
         w={240}
@@ -27,4 +28,4 @@ function StoneItem({ type, name }: { type: string | any; name: string }) {
   );
 }
 
-export default StoneItem;
+export default SinkItem;

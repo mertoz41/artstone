@@ -56,7 +56,7 @@ function Stones() {
   return (
     <Flex h="100vh" w={"100vw"} direction={"column"}>
       <Heading paddingY={30} fontWeight={25} textAlign={"center"}>
-        Stones
+        Sinks
       </Heading>
       <Flex w="90%" justifyContent={"space-between"} alignSelf={"center"}>
         {stoneTypes.map((stone: any) =>
