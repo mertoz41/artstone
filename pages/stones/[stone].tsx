@@ -1,5 +1,5 @@
 import { Heading, Flex } from "@chakra-ui/react";
-import StoneItem from "@/components/StoneItem";
+import CatalogItem from "@/components/CatalogItem";
 import { useRouter } from "next/router";
 
 function Stone() {
@@ -175,7 +175,7 @@ function Stone() {
         {router.query.stone &&
           stoneBook[`${router.query.stone}`].map(
             (stone: any, index: number) => (
-              <StoneItem key={index} type={router.query.stone} name={stone} />
+              <CatalogItem key={index} type={router.query.stone} name={stone} />
             )
           )}
       </Flex>

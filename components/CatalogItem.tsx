@@ -1,6 +1,6 @@
 import { Image, Heading, Flex, Text, Button, Link } from "@chakra-ui/react";
 
-function StoneItem({ type, name }: { type: string | any; name: string }) {
+function CatalogItem({ type, name }: { type: string | any; name: string }) {
   return (
     <Flex margin={5} direction={"column"} padding={5}>
       <Image
@@ -27,4 +27,4 @@ function StoneItem({ type, name }: { type: string | any; name: string }) {
   );
 }
 
-export default StoneItem;
+export default CatalogItem;

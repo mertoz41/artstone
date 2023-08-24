@@ -15,7 +15,7 @@ export default function Sink() {
     ],
     bar: ["as-415", "as-1216", "as-1218", "as-1518", "as-1616", "as-1618"],
     compliant: ["as-201ada", "as-1613ada", "as-2318ada", "as-3117ada"],
-    doubleBowl: [
+    doublebowl: [
       "as-2818",
       "as-2918",
       "as-3117",
@@ -57,7 +57,7 @@ export default function Sink() {
       "as-hm3121r",
       "as-hm3218",
     ],
-    singleBowl: [
+    singlebowl: [
       "as-2318",
       "as-3118",
       "as-2321",

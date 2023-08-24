@@ -1,15 +1,14 @@
 import { Image, Heading, Flex, Text, Button, Link } from "@chakra-ui/react";
 
 function SinkItem({ type, name }: { type: string | any; name: string }) {
-    console.log(type)
   return (
     <Flex margin={5} direction={"column"} padding={5}>
       <Image
         objectFit={"cover"}
         src={`https://asmgsinks.s3.amazonaws.com/${type}pics/${name}.jpg`}
         _hover={{ boxShadow: "xl" }}
-        h={240}
-        w={240}
+        h={260}
+        w={200}
         alignSelf={"center"}
         boxShadow={"2xl"}
         mb={5}

@@ -21,7 +21,8 @@ function Footer() {
       <Heading flex={1} fontSize={22} fontWeight={500}>
         OUR COMPANY
       </Heading>
-      <Flex flex={2} direction={"column"} justifyContent={"space-between"}>
+      <Flex flex={2}>
+        <Box>
         <Text
           _hover={{ textDecoration: "underline" }}
           fontWeight={400}
@@ -47,6 +48,25 @@ function Footer() {
         >
           Stones
         </Text>
+        </Box>
+        <Box marginLeft={40}>
+
+        <Text
+          _hover={{ textDecoration: "underline" }}
+          fontWeight={400}
+          fontSize={18}
+          cursor={"pointer"}
+        >
+          Sinks
+        </Text>
+        <Text
+          _hover={{ textDecoration: "underline" }}
+          fontWeight={400}
+          fontSize={18}
+          cursor={"pointer"}
+        >
+          Edges
+        </Text>
         <Text
           _hover={{ textDecoration: "underline" }}
           fontWeight={400}
@@ -55,6 +75,8 @@ function Footer() {
         >
           Contact Us
         </Text>
+        </Box>
+
       </Flex>
     </Flex>
   );

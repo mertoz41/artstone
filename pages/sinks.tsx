@@ -2,41 +2,58 @@ import { Image, Heading, Flex, Text, Button, Link } from "@chakra-ui/react";
 function Stones() {
   const stoneTypes: Array<any> = [
     {
-      image:
-        "https://asmgstones.s3.amazonaws.com/granitepics/african-persa.png",
-      link: "/stones/granite",
-      title: "Granite",
-      description:
-        "As one of the most durable countertops for the kitchen, granite is the ultimate choice for many homeowners. Available in different colors, it makes for a long-lasting companion in the kitchen.",
+      image: "https://asmgsinks.s3.amazonaws.com/apronpics/as-apr2318.jpg",
+      link: "/sinks/apron",
+      title: "Apron",
     },
     {
-      image:
-        "https://asmgstones.s3.amazonaws.com/marblepics/bianco-carrara-c-marble.png",
-      link: "/stones/marble",
-      title: "Marble",
-      description:
-        "As one of most premier natural stones, nothing spells luxury & elegance as well as marble countertops. They are prized for striking white color & beauty. They make for a perfect addition once sealed.",
+      image: "https://asmgsinks.s3.amazonaws.com/barpics/as-415.jpg",
+      link: "/sinks/bar",
+      title: "Bar",
     },
     {
-      image:
-        "https://asmgstones.s3.amazonaws.com/quartzpics/arabescato-quartz.png",
-      link: "/stones/quartz",
-      title: "Quartz",
-      description:
-        "As one of the most durable stones in the world, this engineered countertop is perfect for those who want a modern touch to their kitchen, and a countertop that’s super easy to maintain. Available in 100+ styles.",
+      image: "https://asmgsinks.s3.amazonaws.com/compliantpics/as-201ada.jpg",
+      link: "/sinks/compliant",
+      title: "Compliant",
+    },
+    {
+      image: "https://asmgsinks.s3.amazonaws.com/doublebowlpics/as-2818.jpg",
+      link: "/sinks/doublebowl",
+      title: "Double Bowl",
+    },
+    {
+      image: "https://asmgsinks.s3.amazonaws.com/duragranitpics/as-gr101.jpg",
+      link: "/sinks/duragranit",
+      title: "Duragranit",
+    },
+    {
+      image: "https://asmgsinks.s3.amazonaws.com/handmadepics/as-hm1518.jpg",
+      link: "/sinks/handmade",
+      title: "Handmade",
+    },
+    {
+      image: "https://asmgsinks.s3.amazonaws.com/singlebowlpics/as-2318.jpg",
+      link: "/sinks/singlebowl",
+      title: "Single Bowl",
+    },
+    {
+      image: "https://asmgsinks.s3.amazonaws.com/vanitypics/as-202.jpg",
+      link: "/sinks/vanity",
+      title: "Vanity",
     },
   ];
-  const renderStoneTypes = (
-    title: string,
-    description: string,
-    image: string,
-    link: string
-  ) => (
+  const renderStoneTypes = (title: string, image: string, link: string) => (
     <Link href={link}>
-      <Flex flex={1} w={320} direction={"column"} cursor="pointer">
+      <Flex
+        flex={1}
+        w={320}
+        marginBottom={34}
+        direction={"column"}
+        cursor="pointer"
+      >
         <Image
           src={image}
-          boxSize={250}
+          boxSize={260}
           alignSelf={"center"}
           boxShadow={"2xl"}
           mb={5}
@@ -44,9 +61,7 @@ function Stones() {
         <Heading fontSize={23} fontWeight={500} textAlign={"center"} mb={5}>
           {title}
         </Heading>
-        <Text fontSize={14} fontWeight={400} textAlign={"center"}>
-          {description}
-        </Text>
+
         <Button marginTop={5} alignSelf={"center"}>
           Browse Selection
         </Button>
@@ -54,18 +69,18 @@ function Stones() {
     </Link>
   );
   return (
-    <Flex h="100vh" w={"100vw"} direction={"column"}>
+    <Flex w={"100vw"} direction={"column"}>
       <Heading paddingY={30} fontWeight={25} textAlign={"center"}>
         Sinks
       </Heading>
-      <Flex w="90%" justifyContent={"space-between"} alignSelf={"center"}>
+      <Flex
+        w="90%"
+        justifyContent={"space-between"}
+        alignSelf={"center"}
+        flexWrap={"wrap"}
+      >
         {stoneTypes.map((stone: any) =>
-          renderStoneTypes(
-            stone.title,
-            stone.description,
-            stone.image,
-            stone.link
-          )
+          renderStoneTypes(stone.title, stone.image, stone.link)
         )}
       </Flex>
     </Flex>

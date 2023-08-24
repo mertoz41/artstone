@@ -31,7 +31,16 @@ function Header() {
       return (
         <PopoverBody w={"auto"}>
           {items.map((item: string, i: number) => (
-            <Link href={`/${type}/${item}`} key={i}>
+            <Link
+              href={`/${type}/${
+                type === "sinks" && item === "double bowl"
+                  ? "doublebowl"
+                  : type === "sinks" && item === "single bowl"
+                  ? "singlebowl"
+                  : item
+              }`}
+              key={i}
+            >
               <Heading
                 textAlign={"center"}
                 fontSize={19}
@@ -76,145 +85,24 @@ function Header() {
           boxShadow={"dark-lg"}
         >
           <PopoverArrow />
-          {/* <PopoverBody w={"auto"}> */}
           {renderOptions(title)}
-          {/* <Link href={`/${title}/granite`}>
-              <Heading
-                textAlign={"center"}
-                fontSize={19}
-                fontWeight={400}
-                textDecoration={"underline"}
-                _hover={{
-                  textDecoration: "none",
-                  // textDecorationColor: "red",
-                }}
-                cursor={"pointer"}
-              >
-                granite
-              </Heading>
-            </Link>
-            <Link href="/stones/marble">
-              <Heading
-                textAlign={"center"}
-                fontSize={19}
-                textDecoration={"underline"}
-                fontWeight={400}
-                _hover={{
-                  textDecoration: "none",
-                  // textDecorationColor: "red",
-                }}
-                cursor={"pointer"}
-              >
-                marble
-              </Heading>
-            </Link>
-            <Link href="/stones/quartz">
-              <Heading
-                textAlign={"center"}
-                fontSize={19}
-                fontWeight={400}
-                textDecoration={"underline"}
-                _hover={{
-                  textDecoration: "none",
-                  // textDecorationColor: "red",
-                }}
-                cursor={"pointer"}
-              >
-                quartz
-              </Heading>
-            </Link> */}
-          {/* </PopoverBody> */}
         </PopoverContent>
       </Popover>
     );
   };
-  const renderStonesButton = (title: string) => (
-    <Popover trigger="hover">
-      <PopoverTrigger>
-        <Link href="/stones">
-          <Heading
-            fontSize={21}
-            fontWeight={400}
-            _hover={{
-              textDecoration: "underline",
-              textDecorationColor: "black",
-            }}
-            cursor={"pointer"}
-          >
-            {title}
-          </Heading>
-        </Link>
-      </PopoverTrigger>
-      <PopoverContent
-        backgroundColor={"white"}
-        borderWidth={1}
-        borderColor="#e5e5e5"
-        padding={15}
-        borderRadius={20}
-        boxShadow={"dark-lg"}
-      >
-        <PopoverArrow />
-        <PopoverBody w={"auto"}>
-          <Link href="/stones/granite">
-            <Heading
-              textAlign={"center"}
-              fontSize={19}
-              fontWeight={400}
-              textDecoration={"underline"}
-              _hover={{
-                textDecoration: "none",
-                // textDecorationColor: "red",
-              }}
-              cursor={"pointer"}
-            >
-              granite
-            </Heading>
-          </Link>
-          <Link href="/stones/marble">
-            <Heading
-              textAlign={"center"}
-              fontSize={19}
-              textDecoration={"underline"}
-              fontWeight={400}
-              _hover={{
-                textDecoration: "none",
-                // textDecorationColor: "red",
-              }}
-              cursor={"pointer"}
-            >
-              marble
-            </Heading>
-          </Link>
-          <Link href="/stones/quartz">
-            <Heading
-              textAlign={"center"}
-              fontSize={19}
-              fontWeight={400}
-              textDecoration={"underline"}
-              _hover={{
-                textDecoration: "none",
-                // textDecorationColor: "red",
-              }}
-              cursor={"pointer"}
-            >
-              quartz
-            </Heading>
-          </Link>
-        </PopoverBody>
-      </PopoverContent>
-    </Popover>
-  );
 
   const renderNavigationButton = (title: string) => {
     return (
-      <Heading
-        fontSize={21}
-        fontWeight={400}
-        _hover={{ textDecoration: "underline", textDecorationColor: "black" }}
-        cursor={"pointer"}
-      >
-        {title}
-      </Heading>
+      <Link href={`/${title}`}>
+        <Heading
+          fontSize={21}
+          fontWeight={400}
+          _hover={{ textDecoration: "underline", textDecorationColor: "black" }}
+          cursor={"pointer"}
+        >
+          {title}
+        </Heading>
+      </Link>
     );
   };
   return (
@@ -226,7 +114,7 @@ function Header() {
           boxSize={130}
         />
       </Link>
-      <Heading textAlign={"center"} fontSize={36} fontWeight={"400"}>
+      <Heading textAlign={"center"} fontSize={36} fontWeight={"300"}>
         Artstone Marble & Granite
       </Heading>
       <Flex m="0 auto" justifyContent={"space-between"} w={"30%"}>
