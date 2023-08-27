@@ -44,11 +44,10 @@ function Header() {
               <Heading
                 textAlign={"center"}
                 fontSize={19}
-                fontWeight={400}
+                fontWeight={300}
                 textDecoration={"underline"}
                 _hover={{
                   textDecoration: "none",
-                  // textDecorationColor: "red",
                 }}
                 cursor={"pointer"}
               >
@@ -65,10 +64,11 @@ function Header() {
           <Link href={`/${title}`}>
             <Heading
               fontSize={21}
-              fontWeight={400}
+              fontWeight={300}
               _hover={{
                 textDecoration: "underline",
                 textDecorationColor: "black",
+                textDecorationThickness: 1,
               }}
               cursor={"pointer"}
             >
@@ -96,8 +96,12 @@ function Header() {
       <Link href={`/${title}`}>
         <Heading
           fontSize={21}
-          fontWeight={400}
-          _hover={{ textDecoration: "underline", textDecorationColor: "black" }}
+          fontWeight={300}
+          _hover={{
+            textDecoration: "underline",
+            textDecorationColor: "black",
+            textDecorationThickness: 1,
+          }}
           cursor={"pointer"}
         >
           {title}
@@ -110,7 +114,7 @@ function Header() {
       <Link href="/">
         <Image
           justifyContent={"center"}
-          src="/artstonelogo.jpg"
+          src="https://asmgstones.s3.amazonaws.com/posterpics/aslogo.jpg"
           boxSize={130}
         />
       </Link>

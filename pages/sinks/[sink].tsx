@@ -1,7 +1,6 @@
 import { Heading, Flex } from "@chakra-ui/react";
-
 import { useRouter } from "next/router";
-import SinkItem from "@/components/SinkItem";
+import CatalogItem from "@/components/CatalogItem";
 export default function Sink() {
   const router = useRouter();
   const sinkBook: any = {
@@ -91,7 +90,12 @@ export default function Sink() {
       >
         {router.query.sink &&
           sinkBook[`${router.query.sink}`].map((sink: any, index: number) => (
-            <SinkItem key={index} type={router.query.sink} name={sink} />
+            <CatalogItem
+              key={index}
+              type="sinks"
+              kind={router.query.sink}
+              name={sink}
+            />
           ))}
       </Flex>
     </Flex>

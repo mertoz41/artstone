@@ -1,4 +1,4 @@
-import { Image, Heading, Flex, Text, Button, Link } from "@chakra-ui/react";
+import { Image, Heading, Flex, Button, Link } from "@chakra-ui/react";
 function Stones() {
   const stoneTypes: Array<any> = [
     {

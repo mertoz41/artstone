@@ -1,9 +1,10 @@
 import { Box, Flex, Image, Text, Heading } from "@chakra-ui/react";
+import Link from "next/link";
 
 function Footer() {
   const renderCompanyStatement = () => (
     <Box flex={1} padding={5}>
-      <Image h={65} src={"/artstonelogo.jpg"} m="0 auto" mb={5} />
+      <Image h={65} src={"https://asmgstones.s3.amazonaws.com/posterpics/aslogo.jpg"} m="0 auto" mb={5} />
       <Text fontWeight={400} fontSize={18}>
         At Artstone Marble & Granite we strive to provide our customers with
         countertops and surfaces so stunning, they serve as unique works of art
@@ -23,60 +24,65 @@ function Footer() {
       </Heading>
       <Flex flex={2}>
         <Box>
-        <Text
-          _hover={{ textDecoration: "underline" }}
-          fontWeight={400}
-          fontSize={18}
-          cursor={"pointer"}
-        >
-          About us
-        </Text>
-
-        <Text
-          _hover={{ textDecoration: "underline" }}
-          fontWeight={400}
-          fontSize={18}
-          cursor={"pointer"}
-        >
-          Blog
-        </Text>
-        <Text
-          _hover={{ textDecoration: "underline" }}
-          fontWeight={400}
-          fontSize={18}
-          cursor={"pointer"}
-        >
-          Stones
-        </Text>
+          <Link href={"/about"}>
+            <Text
+              _hover={{ textDecoration: "underline" }}
+              fontWeight={400}
+              fontSize={18}
+              cursor={"pointer"}
+            >
+              About us
+            </Text>
+          </Link>
+          <Text
+            _hover={{ textDecoration: "underline" }}
+            fontWeight={400}
+            fontSize={18}
+            cursor={"pointer"}
+          >
+            Blog
+          </Text>
+          <Link href={"/stones"}>
+            <Text
+              _hover={{ textDecoration: "underline" }}
+              fontWeight={400}
+              fontSize={18}
+              cursor={"pointer"}
+            >
+              Stones
+            </Text>
+          </Link>
         </Box>
         <Box marginLeft={40}>
-
-        <Text
-          _hover={{ textDecoration: "underline" }}
-          fontWeight={400}
-          fontSize={18}
-          cursor={"pointer"}
-        >
-          Sinks
-        </Text>
-        <Text
-          _hover={{ textDecoration: "underline" }}
-          fontWeight={400}
-          fontSize={18}
-          cursor={"pointer"}
-        >
-          Edges
-        </Text>
-        <Text
-          _hover={{ textDecoration: "underline" }}
-          fontWeight={400}
-          fontSize={18}
-          cursor={"pointer"}
-        >
-          Contact Us
-        </Text>
+          <Link href={"/sinks"}>
+            <Text
+              _hover={{ textDecoration: "underline" }}
+              fontWeight={400}
+              fontSize={18}
+              cursor={"pointer"}
+            >
+              Sinks
+            </Text>
+          </Link>
+          <Link href={"/edges"}>
+            <Text
+              _hover={{ textDecoration: "underline" }}
+              fontWeight={400}
+              fontSize={18}
+              cursor={"pointer"}
+            >
+              Edges
+            </Text>
+          </Link>
+          <Text
+            _hover={{ textDecoration: "underline" }}
+            fontWeight={400}
+            fontSize={18}
+            cursor={"pointer"}
+          >
+            Contact Us
+          </Text>
         </Box>
-
       </Flex>
     </Flex>
   );
@@ -105,19 +111,18 @@ function Footer() {
     </Flex>
   );
   return (
-    <Flex
-      h="auto"
-      m="0 auto"
-      justifyContent={"center"}
-      backgroundColor={"#f2f2f2"}
-      boxShadow={"dark-lg"}
-    >
-      <Flex w={"70%"} justifyContent={"space-between"}>
-        {renderCompanyStatement()}
-        {renderLinks()}
-        {renderAddress()}
+    <Box justifyContent={"center"}>
+      <Flex direction={"column"} backgroundColor={"#f2f2f2"}>
+        <Flex w={"70%"} alignSelf={"center"} justifyContent={"space-between"}>
+          {renderCompanyStatement()}
+          {renderLinks()}
+          {renderAddress()}
+        </Flex>
       </Flex>
-    </Flex>
+      <Text margin={10} textAlign={"center"} fontSize={13}>
+        ARTSTONE MARBLE & GRANITE 2023 © ALL RIGHTS RESERVED
+      </Text>
+    </Box>
   );
 }
 

@@ -1,23 +1,32 @@
 import { Box, Flex, Heading, Text, Input, Button } from "@chakra-ui/react";
+
 function Estimate() {
   return (
-    <Box padding={10} h={"auto"}>
-      <Heading textAlign={"center"} fontSize={36} fontWeight={"300"} mb={10}>
-        Schedule your free estimate today.
-      </Heading>
-      <Box>
-        <Flex>
-          <Input placeholder="Full name" />
-          <Input placeholder="Phone" />
+    <Flex  h={"auto"} direction={"column"} justify={"center"} marginBottom={10}>
+      <Flex
+        direction={"column"}
+        alignSelf={"center"}
+        borderRadius={"20"}
+        w="70%"
+        padding={10}
+      >
+        <Heading textAlign={"center"} fontSize={36} fontWeight={"300"} mb={10}>
+          Schedule your free estimate today.
+        </Heading>
+        <Flex justify={"space-between"}>
+          <Input p={5} placeholder="Full name" />
+          <Input p={5} marginLeft={5} marginBottom={5} placeholder="Phone" />
         </Flex>
-        <Flex>
-          <Input placeholder="Email" />
+        <Flex justify={"space-between"}>
+          <Input p={5} placeholder="Email" />
 
-          <Input placeholder="Message" />
+          <Input p={5} marginLeft={5} marginBottom={5} placeholder="Location" />
         </Flex>
-        <Button>Get Free Estimate</Button>
-      </Box>
-    </Box>
+        <Input p={5} mb={10} placeholder="Message" size="lg" />
+
+        <Button alignSelf={"center"}>Get Free Estimate</Button>
+      </Flex>
+    </Flex>
   );
 }
 

@@ -175,7 +175,12 @@ function Stone() {
         {router.query.stone &&
           stoneBook[`${router.query.stone}`].map(
             (stone: any, index: number) => (
-              <CatalogItem key={index} type={router.query.stone} name={stone} />
+              <CatalogItem
+                type="stones"
+                key={index}
+                kind={router.query.stone}
+                name={stone}
+              />
             )
           )}
       </Flex>

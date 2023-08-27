@@ -32,13 +32,13 @@ function Edges() {
         flexWrap={"wrap"}
       >
         {edgeBook.basicEdges.map((stone: any, index: number) => (
-          <CatalogItem key={index} type={"edge"} name={stone} />
+          <CatalogItem type="edges" key={index} kind={"edge"} name={stone} />
         ))}
         {edgeBook.premiumEdges.map((stone: any, index: number) => (
-          <CatalogItem key={index} type={"edge"} name={stone} />
+          <CatalogItem type="edges" key={index} kind={"edge"} name={stone} />
         ))}
         {edgeBook.customEdges.map((stone: any, index: number) => (
-          <CatalogItem key={index} type={"edge"} name={stone} />
+          <CatalogItem type="edges" key={index} kind={"edge"} name={stone} />
         ))}
       </Flex>
     </Flex>

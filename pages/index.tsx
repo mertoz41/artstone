@@ -8,10 +8,6 @@ function Home() {
       <Head>
         <title>Artstone Marble & Granite</title>
         <meta name="description" content="Mert Ozkaynak portfolio website" />
-        {/* <meta
-          name="google-site-verification"
-          content="BdcSbbdl77EbnSO73TNDEkRqlOehHt5rPaegmW6vBKA"
-        /> */}
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <PosterContainer />
