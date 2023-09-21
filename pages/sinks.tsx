@@ -1,49 +1,42 @@
-import { Image, Heading, Flex, Button, Link } from "@chakra-ui/react";
+import { Heading, Flex, Button, Link } from "@chakra-ui/react";
+import CatalogItem from "@/components/CatalogItem";
 function Stones() {
-  const stoneTypes: Array<any> = [
+  const sinkTypes: Array<any> = [
     {
-      image: "https://asmgsinks.s3.amazonaws.com/apronpics/as-apr2318.jpg",
-      link: "/sinks/apron",
-      title: "Apron",
+      name: "as-apr2318",
+      kind: "apron",
     },
     {
-      image: "https://asmgsinks.s3.amazonaws.com/barpics/as-415.jpg",
-      link: "/sinks/bar",
-      title: "Bar",
+      name: "as-415",
+      kind: "bar",
     },
     {
-      image: "https://asmgsinks.s3.amazonaws.com/compliantpics/as-201ada.jpg",
-      link: "/sinks/compliant",
-      title: "Compliant",
+      name: "as-201ada",
+      kind: "compliant",
     },
     {
-      image: "https://asmgsinks.s3.amazonaws.com/doublebowlpics/as-2818.jpg",
-      link: "/sinks/doublebowl",
-      title: "Double Bowl",
+      name: "as-2818",
+      kind: "doublebowl",
     },
     {
-      image: "https://asmgsinks.s3.amazonaws.com/duragranitpics/as-gr101.jpg",
-      link: "/sinks/duragranit",
-      title: "Duragranit",
+      name: "as-gr101",
+      kind: "duragranit",
     },
     {
-      image: "https://asmgsinks.s3.amazonaws.com/handmadepics/as-hm1518.jpg",
-      link: "/sinks/handmade",
-      title: "Handmade",
+      name: "as-hm1518",
+      kind: "handmade",
     },
     {
-      image: "https://asmgsinks.s3.amazonaws.com/singlebowlpics/as-2318.jpg",
-      link: "/sinks/singlebowl",
-      title: "Single Bowl",
+      name: "as-2318",
+      kind: "singlebowl",
     },
     {
-      image: "https://asmgsinks.s3.amazonaws.com/vanitypics/as-202.jpg",
-      link: "/sinks/vanity",
-      title: "Vanity",
+      name: "as-202",
+      kind: "vanity",
     },
   ];
-  const renderStoneTypes = (title: string, image: string, link: string) => (
-    <Link href={link}>
+  const renderStoneTypes = (sink: any, i: number) => (
+    <Link href={`/sinks/${sink.kind}`} key={i}>
       <Flex
         flex={1}
         w={320}
@@ -51,15 +44,15 @@ function Stones() {
         direction={"column"}
         cursor="pointer"
       >
-        <Image
-          src={image}
-          boxSize={260}
-          alignSelf={"center"}
-          boxShadow={"2xl"}
-          mb={5}
+        <CatalogItem
+          type="sinks"
+          kind={sink.kind}
+          name={sink.name}
+          container={true}
         />
+
         <Heading fontSize={23} fontWeight={500} textAlign={"center"} mb={5}>
-          {title}
+          {sink.kind.charAt(0).toUpperCase() + sink.kind.slice(1)}
         </Heading>
 
         <Button marginTop={5} alignSelf={"center"}>
@@ -79,9 +72,7 @@ function Stones() {
         alignSelf={"center"}
         flexWrap={"wrap"}
       >
-        {stoneTypes.map((stone: any) =>
-          renderStoneTypes(stone.title, stone.image, stone.link)
-        )}
+        {sinkTypes.map((sink: any, i: number) => renderStoneTypes(sink, i))}
       </Flex>
     </Flex>
   );

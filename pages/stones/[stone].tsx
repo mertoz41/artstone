@@ -176,6 +176,7 @@ function Stone() {
           stoneBook[`${router.query.stone}`].map(
             (stone: any, index: number) => (
               <CatalogItem
+              container={false}
                 type="stones"
                 key={index}
                 kind={router.query.stone}

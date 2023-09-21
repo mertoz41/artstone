@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 
 function Layout({ children }: { children: any }) {
   const router = useRouter();
-  let splitted = router.asPath.split("/");
+  let splitted = router.asPath.split("/").filter((item) => item);
   return (
     <>
       <Head>
@@ -18,7 +18,7 @@ function Layout({ children }: { children: any }) {
           Artstone Marble & Granite
         </title>
         <meta name="description" content="Mert Ozkaynak portfolio website" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/images/favicon.ico" />
       </Head>
       <Header />
       <main>{children}</main>

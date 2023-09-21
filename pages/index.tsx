@@ -5,11 +5,11 @@ import Estimate from "@/components/Estimate";
 function Home() {
   return (
     <Box w={"100vw"}>
-      <Head>
+      {/* <Head>
         <title>Artstone Marble & Granite</title>
         <meta name="description" content="Mert Ozkaynak portfolio website" />
         <link rel="icon" href="/favicon.ico" />
-      </Head>
+      </Head> */}
       <PosterContainer />
       <Estimate />
     </Box>

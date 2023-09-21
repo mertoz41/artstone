@@ -1,4 +1,4 @@
-import { Box, Flex, Heading } from "@chakra-ui/react";
+import { Flex, Heading } from "@chakra-ui/react";
 import CatalogItem from "@/components/CatalogItem";
 function Edges() {
   const edgeBook = {
@@ -32,13 +32,31 @@ function Edges() {
         flexWrap={"wrap"}
       >
         {edgeBook.basicEdges.map((stone: any, index: number) => (
-          <CatalogItem type="edges" key={index} kind={"edge"} name={stone} />
+          <CatalogItem
+            container={false}
+            type="edges"
+            key={index}
+            kind={"edge"}
+            name={stone}
+          />
         ))}
         {edgeBook.premiumEdges.map((stone: any, index: number) => (
-          <CatalogItem type="edges" key={index} kind={"edge"} name={stone} />
+          <CatalogItem
+            container={false}
+            type="edges"
+            key={index}
+            kind={"edge"}
+            name={stone}
+          />
         ))}
         {edgeBook.customEdges.map((stone: any, index: number) => (
-          <CatalogItem type="edges" key={index} kind={"edge"} name={stone} />
+          <CatalogItem
+            container={false}
+            type="edges"
+            key={index}
+            kind={"edge"}
+            name={stone}
+          />
         ))}
       </Flex>
     </Flex>

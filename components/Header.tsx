@@ -127,7 +127,7 @@ function Header() {
         {renderPopoverButton("sinks")}
         {renderNavigationButton("edges")}
         {renderNavigationButton("about")}
-        {renderNavigationButton("gallery")}
+        {/* {renderNavigationButton("gallery")} */}
         {renderNavigationButton("contact us")}
       </Flex>
     </Flex>

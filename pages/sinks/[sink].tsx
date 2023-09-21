@@ -91,6 +91,7 @@ export default function Sink() {
         {router.query.sink &&
           sinkBook[`${router.query.sink}`].map((sink: any, index: number) => (
             <CatalogItem
+              container={false}
               key={index}
               type="sinks"
               kind={router.query.sink}

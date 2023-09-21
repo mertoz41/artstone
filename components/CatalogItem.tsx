@@ -6,10 +6,12 @@ function CatalogItem({
   kind,
   name,
   type,
+  container,
 }: {
   kind: string | any;
   name: string;
   type: string;
+  container: boolean;
 }) {
   const pictureSizeDictionary: any = {
     sinks: { h: 260, w: 200 },
@@ -49,17 +51,18 @@ function CatalogItem({
           }}
         />
       )}
-
-      <Heading
-        w="60%"
-        alignSelf={"center"}
-        fontSize={18}
-        textAlign={"center"}
-        fontWeight={500}
-        mb={5}
-      >
-        {name}
-      </Heading>
+      {!container && (
+        <Heading
+          w="60%"
+          alignSelf={"center"}
+          fontSize={18}
+          textAlign={"center"}
+          fontWeight={500}
+          mb={5}
+        >
+          {name}
+        </Heading>
+      )}
     </Flex>
   );
 }
