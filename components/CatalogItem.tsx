@@ -27,16 +27,17 @@ function CatalogItem({
     img.onload = () => {
       setPicture(img.src);
     };
-  }, []);
+  }, [kind]);
   return (
-    <Flex margin={5} direction={"column"} padding={5}>
+    <Flex direction={"column"}>
       {picture ? (
         <Image
           objectFit={"cover"}
           src={picture}
+          alt={`${type} picture`}
           _hover={{ boxShadow: "xl" }}
-          h={pictureSizeDictionary[type].h}
-          w={pictureSizeDictionary[type].w}
+          h={{ xl: pictureSizeDictionary[type].h }}
+          w={{ xl: pictureSizeDictionary[type].w }}
           alignSelf={"center"}
           boxShadow={"2xl"}
           mb={5}
@@ -53,11 +54,11 @@ function CatalogItem({
       )}
       {!container && (
         <Heading
-          w="60%"
+          w={"100%"}
           alignSelf={"center"}
-          fontSize={18}
+          fontSize={{ base: 16, xl: 18 }}
           textAlign={"center"}
-          fontWeight={500}
+          fontWeight={300}
           mb={5}
         >
           {name}

@@ -1,13 +1,15 @@
 import { Box, Text, Flex, Heading } from "@chakra-ui/react";
+import Estimate from "@/components/Estimate";
 import PageHead from "@/components/PageHead";
-function About() {
+function ContactUs() {
   return (
     <Flex justifyContent="center" direction="column" w={"100vw"}>
-      <PageHead title="About Us" />
+      <PageHead title="Contact Us" />
+      {/*      
       <Heading paddingY={30} fontWeight={25} textAlign={"center"}>
         About
       </Heading>
-      <Box w={{ base: "90%", xl: "70%" }} mb={10} alignSelf={"center"}>
+      <Box w={{base: "90%", xl:"70%"}} mb={10} alignSelf={"center"}>
         <Text textAlign={"center"} fontSize={18} fontWeight={300}>
           At American Quartz & Granite we strive to provide our customers with
           countertops and surfaces so stunning, they serve as unique works of
@@ -32,9 +34,10 @@ function About() {
           be assured that all our clients will be happy and satisfied with the
           value they get for their investment.
         </Text>
-      </Box>
+      </Box> */}
+      <Estimate />
     </Flex>
   );
 }
 
-export default About;
+export default ContactUs;

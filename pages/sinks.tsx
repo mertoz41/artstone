@@ -1,5 +1,6 @@
 import { Heading, Flex, Button, Link } from "@chakra-ui/react";
 import CatalogItem from "@/components/CatalogItem";
+import PageHead from "@/components/PageHead";
 function Stones() {
   const sinkTypes: Array<any> = [
     {
@@ -35,7 +36,7 @@ function Stones() {
       kind: "vanity",
     },
   ];
-  const renderStoneTypes = (sink: any, i: number) => (
+  const renderSinkType = (sink: any, i: number) => (
     <Link href={`/sinks/${sink.kind}`} key={i}>
       <Flex
         flex={1}
@@ -63,16 +64,19 @@ function Stones() {
   );
   return (
     <Flex w={"100vw"} direction={"column"}>
+      <PageHead title="Sinks" />
       <Heading paddingY={30} fontWeight={25} textAlign={"center"}>
         Sinks
       </Heading>
       <Flex
         w="90%"
+        direction={{ base: "column", xl: "row" }}
         justifyContent={"space-between"}
         alignSelf={"center"}
+        alignItems={"center"}
         flexWrap={"wrap"}
       >
-        {sinkTypes.map((sink: any, i: number) => renderStoneTypes(sink, i))}
+        {sinkTypes.map((sink: any, i: number) => renderSinkType(sink, i))}
       </Flex>
     </Flex>
   );

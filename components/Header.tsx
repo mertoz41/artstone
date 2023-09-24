@@ -9,7 +9,14 @@ import {
   PopoverHeader,
   PopoverBody,
   PopoverArrow,
+  MenuButton,
+  IconButton,
+  MenuList,
+  MenuItem,
+  Menu,
 } from "@chakra-ui/react";
+import { HamburgerIcon, AddIcon } from "@chakra-ui/icons";
+
 import Link from "next/link";
 
 function Header() {
@@ -29,7 +36,7 @@ function Header() {
               "vanity",
             ];
       return (
-        <PopoverBody w={"auto"}>
+        <PopoverBody w="100%">
           {items.map((item: string, i: number) => (
             <Link
               href={`/${type}/${
@@ -77,8 +84,8 @@ function Header() {
           </Link>
         </PopoverTrigger>
         <PopoverContent
-          backgroundColor={"white"}
           borderWidth={1}
+          w="auto"
           borderColor="#e5e5e5"
           padding={15}
           borderRadius={20}
@@ -90,10 +97,20 @@ function Header() {
       </Popover>
     );
   };
+  const getLinkTitle = (title: string) => {
+    let linkTitle = title;
+    if (title === "contact us") {
+      linkTitle = title
+        .split("")
+        .filter((letter) => letter !== " ")
+        .join("");
+    }
+    return linkTitle;
+  };
 
   const renderNavigationButton = (title: string) => {
     return (
-      <Link href={`/${title}`}>
+      <Link href={`/${getLinkTitle(title)}`}>
         <Heading
           fontSize={21}
           fontWeight={300}
@@ -109,27 +126,65 @@ function Header() {
       </Link>
     );
   };
+  const renderMenuItem = (title: string) => {
+    return (
+      <Link href={`/${getLinkTitle(title)}`}>
+        <MenuItem>{title}</MenuItem>
+      </Link>
+    );
+  };
   return (
-    <Flex flexDirection={"column"} alignItems={"center"}>
+    <Flex
+      flexDirection={{ base: "row", xl: "column" }}
+      justifyContent={{ base: "space-between", xl: "center" }}
+      alignItems={"center"}
+      w={"100%"}
+    >
       <Link href="/">
         <Image
           justifyContent={"center"}
           src="https://asmgstones.s3.amazonaws.com/posterpics/aslogo.jpg"
-          boxSize={130}
+          boxSize={{ base: 70, xl: 130 }}
+          alt="artstonelogo"
         />
       </Link>
-      <Heading textAlign={"center"} fontSize={36} fontWeight={"300"}>
+      <Heading
+        textAlign={"center"}
+        fontSize={{ sm: 23, xl: 36 }}
+        fontWeight={"300"}
+      >
         Artstone Marble & Granite
       </Heading>
-      <Flex m="0 auto" justifyContent={"space-between"} w={"30%"}>
+      <Box display={{ base: "flex-end", xl: "none" }}>
+        <Menu>
+          <MenuButton
+            as={IconButton}
+            aria-label="Options"
+            icon={<HamburgerIcon />}
+            size={"lg"}
+            variant="outline"
+          />
+          <MenuList>
+            {renderMenuItem("stones")}
+            {renderMenuItem("sinks")}
+            {renderMenuItem("edges")}
+            {renderMenuItem("about")}
+            {renderMenuItem("contact us")}
+          </MenuList>
+        </Menu>
+      </Box>
+      <Box
+        m="0 auto"
+        justifyContent={"space-between"}
+        w={{ base: "100%", xl: "30%" }}
+        display={{ sm: "none", xl: "flex" }}
+      >
         {renderPopoverButton("stones")}
-
         {renderPopoverButton("sinks")}
         {renderNavigationButton("edges")}
         {renderNavigationButton("about")}
-        {/* {renderNavigationButton("gallery")} */}
         {renderNavigationButton("contact us")}
-      </Flex>
+      </Box>
     </Flex>
   );
 }

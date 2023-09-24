@@ -1,5 +1,6 @@
 import { Heading, Flex, Text, Button, Link } from "@chakra-ui/react";
 import CatalogItem from "@/components/CatalogItem";
+import PageHead from "@/components/PageHead";
 function Stones() {
   const stoneTypes: Array<any> = [
     {
@@ -25,7 +26,14 @@ function Stones() {
   const renderStoneTypes = (stone: any, i: number) => {
     return (
       <Link href={`/stones/${stone.kind}`} key={i}>
-        <Flex flex={1} w={320} direction={"column"} cursor="pointer">
+        <Flex
+          flex={1}
+          w={320}
+          marginY={5}
+          direction={"column"}
+          alignSelf={"center"}
+          cursor="pointer"
+        >
           <CatalogItem
             type="stones"
             kind={stone.kind}
@@ -47,11 +55,23 @@ function Stones() {
     );
   };
   return (
-    <Flex h="100vh" w={"100vw"} direction={"column"}>
-      <Heading paddingY={30} fontWeight={25} textAlign={"center"}>
+    <Flex w={"100vw"} direction={"column"}>
+      <PageHead title="Stones" />
+      <Heading
+        paddingY={{ base: 5, xl: 30 }}
+        fontWeight={25}
+        textAlign={"center"}
+      >
         Stones
       </Heading>
-      <Flex w="90%" justifyContent={"space-between"} alignSelf={"center"}>
+      <Flex
+        w="90%"
+        direction={{ base: "column", xl: "row" }}
+        justifyContent={"space-between"}
+        alignItems={"center"}
+        mb={5}
+        alignSelf={"center"}
+      >
         {stoneTypes.map((stone: any, index: number) =>
           renderStoneTypes(stone, index)
         )}

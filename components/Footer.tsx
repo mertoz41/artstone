@@ -4,18 +4,23 @@ import Link from "next/link";
 function Footer() {
   const renderCompanyStatement = () => (
     <Box flex={1} padding={5}>
-      <Image h={65} src={"https://asmgstones.s3.amazonaws.com/posterpics/aslogo.jpg"} m="0 auto" mb={5} />
+      <Image
+        h={65}
+        src={"https://asmgstones.s3.amazonaws.com/posterpics/aslogo.jpg"}
+        m="0 auto"
+        mb={5}
+      />
       <Text fontWeight={400} fontSize={18}>
-        At Artstone Marble & Granite we strive to provide our customers with
-        countertops and surfaces so stunning, they serve as unique works of art
-        in your home.
+        Artstone Marble & Granite endeavors to offer our customers countertops
+        and surfaces that function as distinctive pieces of art within your
+        home.
       </Text>
     </Box>
   );
   const renderLinks = () => (
     <Flex
       flex={1}
-      padding={10}
+      padding={5}
       justifyContent={"space-around"}
       flexDir={"column"}
     >
@@ -34,14 +39,14 @@ function Footer() {
               About us
             </Text>
           </Link>
-          <Text
+          {/* <Text
             _hover={{ textDecoration: "underline" }}
             fontWeight={400}
             fontSize={18}
             cursor={"pointer"}
           >
             Blog
-          </Text>
+          </Text> */}
           <Link href={"/stones"}>
             <Text
               _hover={{ textDecoration: "underline" }}
@@ -74,14 +79,16 @@ function Footer() {
               Edges
             </Text>
           </Link>
-          <Text
-            _hover={{ textDecoration: "underline" }}
-            fontWeight={400}
-            fontSize={18}
-            cursor={"pointer"}
-          >
-            Contact Us
-          </Text>
+          <Link href="/contactus">
+            <Text
+              _hover={{ textDecoration: "underline" }}
+              fontWeight={400}
+              fontSize={18}
+              cursor={"pointer"}
+            >
+              Contact Us
+            </Text>
+          </Link>
         </Box>
       </Flex>
     </Flex>
@@ -89,7 +96,7 @@ function Footer() {
   const renderAddress = () => (
     <Flex
       flex={1}
-      padding={10}
+      padding={5}
       justifyContent={"space-around"}
       flexDir={"column"}
     >
@@ -113,13 +120,18 @@ function Footer() {
   return (
     <Box justifyContent={"center"}>
       <Flex direction={"column"} backgroundColor={"#f2f2f2"}>
-        <Flex w={"70%"} alignSelf={"center"} justifyContent={"space-between"}>
+        <Flex
+          w={{ sm: "100%", xl: "70%" }}
+          alignSelf={"center"}
+          direction={{ sm: "column", xl: "row" }}
+          justifyContent={"space-between"}
+        >
           {renderCompanyStatement()}
           {renderLinks()}
-          {renderAddress()}
+          {/* {renderAddress()} */}
         </Flex>
       </Flex>
-      <Text margin={10} textAlign={"center"} fontSize={13}>
+      <Text margin={{ base: 5, xl: 10 }} textAlign={"center"} fontSize={13}>
         ARTSTONE MARBLE & GRANITE 2023 © ALL RIGHTS RESERVED
       </Text>
     </Box>
