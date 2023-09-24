@@ -1,5 +1,15 @@
 import { useState, useEffect } from "react";
-import { Image, Heading, Flex } from "@chakra-ui/react";
+import {
+  Image,
+  Heading,
+  Flex,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalCloseButton,
+  useDisclosure,
+  ModalFooter,
+} from "@chakra-ui/react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 function CatalogItem({
@@ -19,6 +29,7 @@ function CatalogItem({
     edges: { h: 130, w: 220 },
   };
   const [picture, setPicture] = useState<string>("");
+  const { isOpen, onOpen, onClose } = useDisclosure();
   useEffect(() => {
     const img = new (window as any).Image();
     img.src = `https://asmg${
@@ -28,11 +39,18 @@ function CatalogItem({
       setPicture(img.src);
     };
   }, [kind]);
+  const checkModal = () => {
+    if (!container) {
+      onOpen();
+    }
+  };
   return (
     <Flex direction={"column"}>
       {picture ? (
         <Image
+          onClick={checkModal}
           objectFit={"cover"}
+          cursor={"pointer"}
           src={picture}
           alt={`${type} picture`}
           _hover={{ boxShadow: "xl" }}
@@ -64,6 +82,26 @@ function CatalogItem({
           {name}
         </Heading>
       )}
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent alignSelf={"center"}>
+          <Image
+            objectFit={"cover"}
+            src={picture}
+            alt={`${type} bigger picture`}
+            h={{ xl: "100%" }}
+            w={{ xl: "100%" }}
+            alignSelf={"center"}
+            boxShadow={"2xl"}
+            mb={5}
+          />
+          <ModalCloseButton />
+
+          <ModalFooter alignSelf={"center"} fontSize={24}>
+            {name}
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
     </Flex>
   );
 }
