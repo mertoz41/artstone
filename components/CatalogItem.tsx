@@ -4,6 +4,7 @@ import {
   Heading,
   Flex,
   Modal,
+  Box,
   ModalOverlay,
   ModalContent,
   ModalCloseButton,
@@ -24,10 +25,38 @@ function CatalogItem({
   container: boolean;
 }) {
   const pictureSizeDictionary: any = {
-    sinks: { h: 260, w: 200 },
-    stones: { h: 240, w: 240 },
-    edges: { h: 130, w: 220 },
+    sinks: {
+      base: {
+        h: 170,
+        w: 160,
+      },
+      xl: {
+        h: 260,
+        w: 200,
+      },
+    },
+    stones: {
+      base: {
+        h: 120,
+        w: 120,
+      },
+      xl: {
+        h: 240,
+        w: 240,
+      },
+    },
+    edges: {
+      base: {
+        h: 100,
+        w: 180,
+      },
+      xl: {
+        h: 130,
+        w: 220,
+      },
+    },
   };
+
   const [picture, setPicture] = useState<string>("");
   const { isOpen, onOpen, onClose } = useDisclosure();
   useEffect(() => {
@@ -54,21 +83,41 @@ function CatalogItem({
           src={picture}
           alt={`${type} picture`}
           _hover={{ boxShadow: "xl" }}
-          h={{ xl: pictureSizeDictionary[type].h }}
-          w={{ xl: pictureSizeDictionary[type].w }}
+          h={{
+            base: container ? 350 : pictureSizeDictionary[type].base.h,
+            xl: pictureSizeDictionary[type].xl.h,
+          }}
+          w={{
+            base: container ? 300 : pictureSizeDictionary[type].base.w,
+            xl: pictureSizeDictionary[type].xl.w,
+          }}
           alignSelf={"center"}
           boxShadow={"2xl"}
           mb={5}
         />
       ) : (
-        <Skeleton
-          baseColor="#f2f2f2"
-          highlightColor="white"
-          style={{
-            height: pictureSizeDictionary[type].h,
-            width: pictureSizeDictionary[type].w,
+        <Box
+          h={{
+            base: container ? 350 : pictureSizeDictionary[type].base.h,
+            xl: pictureSizeDictionary[type].xl.h,
           }}
-        />
+          w={{
+            base: container ? 300 : pictureSizeDictionary[type].base.w,
+            xl: pictureSizeDictionary[type].xl.w,
+          }}
+          objectFit={"cover"}
+          alignSelf={"center"}
+          mb={5}
+        >
+          <Skeleton
+            baseColor="#f2f2f2"
+            highlightColor="white"
+            style={{
+              height: "100%",
+              width: "100%",
+            }}
+          />
+        </Box>
       )}
       {!container && (
         <Heading
