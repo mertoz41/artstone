@@ -143,7 +143,7 @@ function Header() {
       <Link href="/">
         <Image
           justifyContent={"center"}
-          src="https://asmgstones.s3.amazonaws.com/posterpics/aslogo.jpg"
+          src="https://asmg-bucket.s3.amazonaws.com/posterpics/aslogo.jpg"
           boxSize={{ base: 70, xl: 130 }}
           alt="artstonelogo"
         />

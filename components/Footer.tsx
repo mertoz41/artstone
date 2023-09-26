@@ -6,7 +6,7 @@ function Footer() {
     <Box flex={1} padding={5}>
       <Image
         h={65}
-        src={"https://asmgstones.s3.amazonaws.com/posterpics/aslogo.jpg"}
+        src={"https://asmg-bucket.s3.amazonaws.com/posterpics/aslogo.jpg"}
         m="0 auto"
         mb={5}
       />

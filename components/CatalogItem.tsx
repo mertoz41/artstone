@@ -61,9 +61,7 @@ function CatalogItem({
   const { isOpen, onOpen, onClose } = useDisclosure();
   useEffect(() => {
     const img = new (window as any).Image();
-    img.src = `https://asmg${
-      type === "sinks" ? "sinks" : "stones"
-    }.s3.amazonaws.com/${kind}pics/${name}.${type === "sinks" ? "jpg" : "png"}`;
+    img.src = `https://asmg-bucket.s3.amazonaws.com/${kind}pics/${name}.${type === "sinks" ? "jpg" : "png"}`;
     img.onload = () => {
       setPicture(img.src);
     };
