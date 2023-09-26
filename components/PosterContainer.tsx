@@ -13,13 +13,13 @@ function PosterContainer() {
   useEffect(() => {
     const img = new (window as any).Image();
     img.src =
-      "https://asmg-bucket.s3.amazonaws.com/posterpics/artstone-fifth.jpg";
+      "https://d3156eqod4r5bv.cloudfront.net/posterpics/artstone-fifth.jpg";
     img.onload = () => {
       setFirst(img.src);
     };
     const two = new (window as any).Image();
     two.src =
-      "https://asmg-bucket.s3.amazonaws.com/posterpics/artstone-fourth.jpg";
+      "https://d3156eqod4r5bv.cloudfront.net/posterpics/artstone-fourth.jpg";
     two.onload = () => {
       setSecond(two.src);
     };
