@@ -9,6 +9,10 @@ function PageHead(props: HeadProps) {
     <Head>
       <title>{title ? title + " - " : null}Artstone Marble & Granite</title>
       <link rel="icon" href="/images/favicon.ico" />
+      <meta
+        name="google-site-verification"
+        content="gmOao_aMrsmc_M9glnb4oKykVqwL5QOeof2ipqI8eCU"
+      />
       {children}
     </Head>
   );
