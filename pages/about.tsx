@@ -9,7 +9,7 @@ function About() {
       </Heading>
       <Box w={{ base: "90%", xl: "70%" }} mb={10} alignSelf={"center"}>
         <Text textAlign={"center"} fontSize={18} fontWeight={300}>
-          At American Quartz & Granite we strive to provide our customers with
+          At Artstone Marble and Granite, we strive to provide our customers with
           countertops and surfaces so stunning, they serve as unique works of
           art in your home. We provide the highest level customer service by
           guiding you through the process of your project from start to finish.

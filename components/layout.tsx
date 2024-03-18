@@ -7,7 +7,7 @@ function Layout({ children }: { children: any }) {
   return (
     <>
       <PageHead>
-        <meta name="description" content="Mert Ozkaynak portfolio website" />
+        <meta name="description" content="Artstone Marble & Granite" />
       </PageHead>
       <Header />
       <main>{children}</main>
