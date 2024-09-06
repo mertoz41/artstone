@@ -135,10 +135,11 @@ function Header() {
   };
   return (
     <Flex
-      flexDirection={{ base: "row", xl: "column" }}
+      // flexDirection={{ base: "row", xl: "column" }}
       justifyContent={{ base: "space-between", xl: "center" }}
       alignItems={"center"}
-      w={"100%"}
+      w={"50%"}
+      m="0 auto"
     >
       <Link href="/">
         <Image
@@ -148,43 +149,45 @@ function Header() {
           alt="artstonelogo"
         />
       </Link>
-      <Heading
-        textAlign={"center"}
-        fontSize={{ sm: 23, xl: 36 }}
-        fontWeight={"300"}
-      >
-        Artstone Marble & Granite
-      </Heading>
-      <Box display={{ base: "flex-end", xl: "none" }}>
-        <Menu>
-          <MenuButton
-            as={IconButton}
-            aria-label="Options"
-            icon={<HamburgerIcon />}
-            size={"lg"}
-            variant="outline"
-          />
-          <MenuList>
-            {renderMenuItem("stones")}
-            {renderMenuItem("sinks")}
-            {renderMenuItem("edges")}
-            {renderMenuItem("about")}
-            {renderMenuItem("contact us")}
-          </MenuList>
-        </Menu>
-      </Box>
-      <Box
-        m="0 auto"
-        justifyContent={"space-between"}
-        w={{ base: "100%", xl: "30%" }}
-        display={{ sm: "none", xl: "flex" }}
-      >
-        {renderPopoverButton("stones")}
-        {renderPopoverButton("sinks")}
-        {renderNavigationButton("edges")}
-        {renderNavigationButton("about")}
-        {renderNavigationButton("contact us")}
-      </Box>
+      <Flex marginLeft={5} flexDirection={"column"}>
+        <Heading
+          textAlign={"center"}
+          fontSize={{ sm: 23, xl: 36 }}
+          fontWeight={"300"}
+        >
+          Artstone Marble & Granite
+        </Heading>
+        <Box display={{ base: "flex-end", xl: "none" }}>
+          <Menu>
+            <MenuButton
+              as={IconButton}
+              aria-label="Options"
+              icon={<HamburgerIcon />}
+              size={"lg"}
+              variant="outline"
+            />
+            <MenuList>
+              {renderMenuItem("stones")}
+              {renderMenuItem("sinks")}
+              {renderMenuItem("edges")}
+              {renderMenuItem("about")}
+              {renderMenuItem("contact us")}
+            </MenuList>
+          </Menu>
+        </Box>
+        <Box
+          m="0 auto"
+          justifyContent={"space-between"}
+          w={"100%"}
+          display={{ sm: "none", xl: "flex" }}
+        >
+          {renderPopoverButton("stones")}
+          {renderPopoverButton("sinks")}
+          {renderNavigationButton("edges")}
+          {renderNavigationButton("about")}
+          {renderNavigationButton("contact us")}
+        </Box>
+      </Flex>
     </Flex>
   );
 }
