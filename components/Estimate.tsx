@@ -81,7 +81,7 @@ function Estimate() {
         <Flex direction={"column"}>
           <Heading
             textAlign={"center"}
-            fontSize={33}
+            fontSize={30}
             fontWeight={"300"}
             mb={10}
           >
@@ -89,7 +89,7 @@ function Estimate() {
           </Heading>
           <Heading
             textAlign={"center"}
-            fontSize={33}
+            fontSize={30}
             fontWeight={"300"}
             mb={10}
           >

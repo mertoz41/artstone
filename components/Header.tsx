@@ -3,100 +3,17 @@ import {
   Image,
   Heading,
   Flex,
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  PopoverHeader,
-  PopoverBody,
-  PopoverArrow,
   MenuButton,
   IconButton,
   MenuList,
   MenuItem,
   Menu,
 } from "@chakra-ui/react";
-import { HamburgerIcon, AddIcon } from "@chakra-ui/icons";
+import { HamburgerIcon } from "@chakra-ui/icons";
 
 import Link from "next/link";
 
 function Header() {
-  const renderPopoverButton = (title: string) => {
-    const renderOptions = (type: string) => {
-      const items =
-        type === "stones"
-          ? ["marble", "granite", "quartz"]
-          : [
-              "apron",
-              "bar",
-              "compliant",
-              "double bowl",
-              "duragranit",
-              "handmade",
-              "single bowl",
-              "vanity",
-            ];
-      return (
-        <PopoverBody w="100%">
-          {items.map((item: string, i: number) => (
-            <Link
-              href={`/${type}/${
-                type === "sinks" && item === "double bowl"
-                  ? "doublebowl"
-                  : type === "sinks" && item === "single bowl"
-                  ? "singlebowl"
-                  : item
-              }`}
-              key={i}
-            >
-              <Heading
-                textAlign={"center"}
-                fontSize={19}
-                fontWeight={300}
-                textDecoration={"underline"}
-                _hover={{
-                  textDecoration: "none",
-                }}
-                cursor={"pointer"}
-              >
-                {item}
-              </Heading>
-            </Link>
-          ))}
-        </PopoverBody>
-      );
-    };
-    return (
-      <Popover trigger="hover">
-        <PopoverTrigger>
-          <Link href={`/${title}`}>
-            <Heading
-              fontSize={21}
-              fontWeight={300}
-              _hover={{
-                textDecoration: "underline",
-                textDecorationColor: "black",
-                textDecorationThickness: 1,
-              }}
-              cursor={"pointer"}
-            >
-              {title}
-            </Heading>
-          </Link>
-        </PopoverTrigger>
-        <PopoverContent
-          borderWidth={1}
-          w="auto"
-          borderColor="#e5e5e5"
-          padding={15}
-          borderRadius={20}
-          boxShadow={"dark-lg"}
-        >
-          <PopoverArrow />
-          {renderOptions(title)}
-        </PopoverContent>
-      </Popover>
-    );
-  };
   const getLinkTitle = (title: string) => {
     let linkTitle = title;
     if (title === "contact us") {
@@ -135,10 +52,10 @@ function Header() {
   };
   return (
     <Flex
-      // flexDirection={{ base: "row", xl: "column" }}
       justifyContent={{ base: "space-between", xl: "center" }}
       alignItems={"center"}
-      w={"50%"}
+      alignSelf={"center"}
+      w={{ base: "100%", xl: "40%" }}
       m="0 auto"
     >
       <Link href="/">
@@ -149,7 +66,11 @@ function Header() {
           alt="artstonelogo"
         />
       </Link>
-      <Flex marginLeft={5} flexDirection={"column"}>
+      <Flex
+        flex={{ base: 1, xl: 1 }}
+        marginLeft={5}
+        flexDirection={{ base: "row", xl: "column" }}
+      >
         <Heading
           textAlign={"center"}
           fontSize={{ sm: 23, xl: 36 }}
@@ -157,37 +78,38 @@ function Header() {
         >
           Artstone Marble & Granite
         </Heading>
-        <Box display={{ base: "flex-end", xl: "none" }}>
-          <Menu>
-            <MenuButton
-              as={IconButton}
-              aria-label="Options"
-              icon={<HamburgerIcon />}
-              size={"lg"}
-              variant="outline"
-            />
-            <MenuList>
-              {renderMenuItem("stones")}
-              {renderMenuItem("sinks")}
-              {renderMenuItem("edges")}
-              {renderMenuItem("about")}
-              {renderMenuItem("contact us")}
-            </MenuList>
-          </Menu>
-        </Box>
+
         <Box
           m="0 auto"
           justifyContent={"space-between"}
           w={"100%"}
           display={{ sm: "none", xl: "flex" }}
         >
-          {renderPopoverButton("stones")}
-          {renderPopoverButton("sinks")}
+          {renderNavigationButton("stones")}
+          {renderNavigationButton("sinks")}
           {renderNavigationButton("edges")}
           {renderNavigationButton("about")}
           {renderNavigationButton("contact us")}
         </Box>
       </Flex>
+      <Box marginRight={2} display={{ base: "flex-end", xl: "none" }}>
+        <Menu>
+          <MenuButton
+            as={IconButton}
+            aria-label="Options"
+            icon={<HamburgerIcon />}
+            size={"lg"}
+            variant="outline"
+          />
+          <MenuList>
+            {renderMenuItem("stones")}
+            {renderMenuItem("sinks")}
+            {renderMenuItem("edges")}
+            {renderMenuItem("about")}
+            {renderMenuItem("contact us")}
+          </MenuList>
+        </Menu>
+      </Box>
     </Flex>
   );
 }

@@ -5,7 +5,7 @@ import { Box, Flex, Heading, Text, Image } from "@chakra-ui/react";
 function PosterContainer() {
   const slogans = [
     "Elevate Your Space with Timeless Elegance: Unveiling the Artistry of Granite, Quartz, and Marble Masterpieces.",
-    "While we also supply faucets, sinks, and tiles, our specialty is kitchen and bathroom countertops, backsplashes, and vanities. As a local company in Alexandria, we understand how valuable your home is for you, and we strive to provide you the best stones to spruce it up. Our goal is to provide affordable countertop solutions for everyone in our community while also providing top-notch materials & installation service.",
+    "While we also supply faucets, sinks, and tiles, our specialty is kitchen and bathroom countertops, backsplashes, and vanities.",
   ];
   const [first, setFirst] = useState<string>("");
   const [second, setSecond] = useState<string>("");
@@ -74,12 +74,25 @@ function PosterContainer() {
   return (
     <Box padding={{ base: 2, xl: 10 }} h={"auto"}>
       {renderPosterSection(false, second, slogans[0])}
-      <Box display={{ base: "none", xl: "block" }}>
+      <Box display={{ base: "none", xl: "block" }} marginBottom={20}>
         {renderPosterSection(true, first, slogans[1])}
       </Box>
-      <Box display={{ base: "block", xl: "none" }}>
+      <Box display={{ base: "block", xl: "none" }} marginBottom={10}>
         {renderPosterSection(false, first, slogans[1])}
       </Box>
+      <Text
+        fontWeight={300}
+        fontSize={19}
+        width={{ base: "90%", xl: "50%" }}
+        m="0 auto"
+        textAlign={"center"}
+      >
+        As a local company in Alexandria, we understand how valuable your home
+        is for you, and we strive to provide you the best stones to spruce it
+        up. Our goal is to provide affordable countertop solutions for everyone
+        in our community while also providing top-notch materials & installation
+        service.
+      </Text>
     </Box>
   );
 }
