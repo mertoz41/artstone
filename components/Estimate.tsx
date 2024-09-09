@@ -138,7 +138,7 @@ function Estimate() {
                 />
               </Flex>
               <Flex justify={"space-between"}>
-                <Input {...register("email")} p={5} placeholder="Email" />
+                <Input {...register("email")} type="email" p={5} placeholder="Email" />
 
                 <Input
                   {...register("location")}
