@@ -8,7 +8,11 @@ function Stone() {
   const router = useRouter();
   return (
     <Flex w={"100vw"} direction={"column"}>
-      {router.query.stone && <PageHead title={router.query.stone} />}
+      <PageHead
+        title="Marble, Granite & Quartz Countertops in Maryland"
+        description="Browse our premium selection of granite, quartz, and marble countertop materials available for installation across Maryland. Custom fabrication and expert installation."
+        canonical="https://artstonemarble.com/stones"
+      />
       <Heading
         paddingY={{ base: 5, xl: 30 }}
         fontWeight={25}

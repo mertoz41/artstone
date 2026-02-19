@@ -63,10 +63,14 @@ function Stones() {
     </Link>
   );
   return (
-    <Flex w={"100vw"} direction={"column"}>
-      <PageHead title="Sinks" />
+    <Flex direction={"column"}>
+      <PageHead
+        title="Kitchen & Bathroom Sinks in Maryland"
+        description="High-quality kitchen and bathroom sinks available with professional installation across Maryland. Complete your countertop project with precision craftsmanship."
+        canonical="https://artstonemarble.com/sinks"
+      />
       <Heading paddingY={30} fontWeight={25} textAlign={"center"}>
-        Sinks
+      Kitchen & Bathroom Sinks in Maryland
       </Heading>
       <Flex
         w="90%"

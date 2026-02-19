@@ -9,7 +9,11 @@ export default function Sink() {
 
   return (
     <Flex w={"100vw"} direction={"column"}>
-      {router.query.sink && <PageHead title={router.query.sink} />}
+      <PageHead
+        title="Kitchen & Bathroom Sinks in Maryland"
+        description="High-quality kitchen and bathroom sinks available with professional installation across Maryland. Complete your countertop project with precision craftsmanship."
+        canonical="https://artstonemarble.com/sinks"
+      />
       <Heading paddingY={30} fontWeight={25} textAlign={"center"}>
         {router.query.sink}
       </Heading>

@@ -30,36 +30,7 @@ function Footer() {
       </Heading>
       <Flex flex={2}>
         <Box>
-          <Link href={"/about"}>
-            <Text
-              _hover={{ textDecoration: "underline" }}
-              fontWeight={400}
-              fontSize={18}
-              cursor={"pointer"}
-            >
-              About us
-            </Text>
-          </Link>
-          {/* <Text
-            _hover={{ textDecoration: "underline" }}
-            fontWeight={400}
-            fontSize={18}
-            cursor={"pointer"}
-          >
-            Blog
-          </Text> */}
-          <Link href={"/stones"}>
-            <Text
-              _hover={{ textDecoration: "underline" }}
-              fontWeight={400}
-              fontSize={18}
-              cursor={"pointer"}
-            >
-              Stones
-            </Text>
-          </Link>
-        </Box>
-        <Box marginLeft={40}>
+         
           <Link href={"/sinks"}>
             <Text
               _hover={{ textDecoration: "underline" }}
@@ -80,7 +51,29 @@ function Footer() {
               Edges
             </Text>
           </Link>
-          <Link href="/contactus">
+          <Link href={"/stones"}>
+            <Text
+              _hover={{ textDecoration: "underline" }}
+              fontWeight={400}
+              fontSize={18}
+              cursor={"pointer"}
+            >
+              Stones
+            </Text>
+          </Link>
+        </Box>
+        <Box marginLeft={40}>
+        <Link href={"/about"}>
+            <Text
+              _hover={{ textDecoration: "underline" }}
+              fontWeight={400}
+              fontSize={18}
+              cursor={"pointer"}
+            >
+              About us
+            </Text>
+          </Link>
+          <Link href="/contact-us">
             <Text
               _hover={{ textDecoration: "underline" }}
               fontWeight={400}
@@ -132,8 +125,8 @@ function Footer() {
           {/* {renderAddress()} */}
         </Flex>
       </Flex>
-      <Text margin={{ base: 5, xl: 10 }} textAlign={"center"} fontSize={13}>
-        ARTSTONE MARBLE & GRANITE 2023 © ALL RIGHTS RESERVED
+      <Text margin={{ base: 5, xl: 5 }} textAlign={"center"} fontSize={13}>
+        ARTSTONE MARBLE & GRANITE 2026 © ALL RIGHTS RESERVED
       </Text>
     </Box>
   );

@@ -22,8 +22,12 @@ function Edges() {
     ],
   };
   return (
-    <Flex w={"100vw"} direction={"column"}>
-      <PageHead title="Edges" />
+    <Flex direction={"column"}>
+      <PageHead
+        title="Countertop Edge Styles in Maryland"
+        description="Explore granite and quartz countertop edge styles available for custom fabrication in Maryland. Professional installation with precision detailing."
+        canonical="https://artstonemarble.com/edges"
+        />
       <Heading paddingY={30} fontWeight={25} textAlign={"center"}>
         Edges
       </Heading>

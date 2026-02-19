@@ -2,7 +2,7 @@ import { Box, Text, Flex, Heading } from "@chakra-ui/react";
 import PageHead from "@/components/PageHead";
 function About() {
   return (
-    <Flex justifyContent="center" direction="column" w={"100vw"}>
+    <Flex justifyContent="center" direction="column">
       <PageHead title="About Us" />
       <Heading paddingY={30} fontWeight={25} textAlign={"center"}>
         About

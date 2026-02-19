@@ -3,14 +3,10 @@ import {
   Image,
   Heading,
   Flex,
-  Modal,
   Box,
-  ModalOverlay,
-  ModalContent,
-  ModalCloseButton,
   useDisclosure,
-  ModalFooter,
 } from "@chakra-ui/react";
+import ImageModal from "./ImageModal";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 function CatalogItem({
@@ -82,6 +78,8 @@ function CatalogItem({
           cursor={"pointer"}
           src={picture}
           alt={`${type} picture`}
+          boxShadow={"2xl"}
+          transition="box-shadow 0.3s ease"
           _hover={{ boxShadow: "xl" }}
           h={{
             base: container ? 350 : pictureSizeDictionary[type].base.h,
@@ -92,7 +90,6 @@ function CatalogItem({
             xl: pictureSizeDictionary[type].xl.w,
           }}
           alignSelf={"center"}
-          boxShadow={"2xl"}
           mb={5}
         />
       ) : (
@@ -131,26 +128,13 @@ function CatalogItem({
           {name}
         </Heading>
       )}
-      <Modal isOpen={isOpen} onClose={onClose}>
-        <ModalOverlay />
-        <ModalContent alignSelf={"center"}>
-          <Image
-            objectFit={"cover"}
-            src={picture}
-            alt={`${type} bigger picture`}
-            h={{ xl: "100%" }}
-            w={{ xl: "100%" }}
-            alignSelf={"center"}
-            boxShadow={"2xl"}
-            mb={5}
-          />
-          <ModalCloseButton />
-
-          <ModalFooter alignSelf={"center"} fontSize={24}>
-            {name}
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
+      <ImageModal
+        isOpen={isOpen}
+        onClose={onClose}
+        src={picture}
+        alt={`${type} bigger picture`}
+        caption={name}
+      />
     </Flex>
   );
 }

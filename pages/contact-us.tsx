@@ -3,7 +3,7 @@ import Estimate from "@/components/Estimate";
 import PageHead from "@/components/PageHead";
 function ContactUs() {
   return (
-    <Flex justifyContent="center" direction="column" w={"100vw"}>
+    <Flex justifyContent="center" direction="column">
       <PageHead title="Contact Us" />
       <Estimate />
     </Flex>

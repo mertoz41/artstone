@@ -55,14 +55,18 @@ function Stones() {
     );
   };
   return (
-    <Flex w={"100vw"} direction={"column"}>
-      <PageHead title="Stones" />
+    <Flex direction={"column"}>
+      <PageHead
+          title="Granite, Quartz & Marble Countertops in Maryland"
+          description="Browse our premium selection of granite, quartz, and marble countertop materials available for installation across Maryland. Custom fabrication and expert installation."
+          canonical="https://artstonemarble.com/stones"
+        />
       <Heading
         paddingY={{ base: 5, xl: 30 }}
         fontWeight={25}
         textAlign={"center"}
       >
-        Stones
+         Granite, Quartz & Marble Countertops in Maryland
       </Heading>
       <Flex
         w="90%"

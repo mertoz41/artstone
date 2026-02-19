@@ -6,7 +6,7 @@ import type { AppProps } from "next/app";
 import Layout from "@/components/layout";
 import theme from "@/utilities/theme";
 import { animated, useSpring } from "@react-spring/web";
-import Router, { useRouter } from "next/router";
+import { useRouter } from "next/router";
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
 };
